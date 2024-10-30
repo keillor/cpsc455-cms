@@ -1,0 +1,26 @@
+{
+  "name": "cpsc455-cms",
+  "version": "1.0.0",
+  "description": "CPSC 455 - Fall 2024",
+  "main": "cms.js",
+  "scripts": {
+    "start": "nodemon",
+    "passwords": "./bin/hash.mjs aaa bbb ccc ddd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfAvery/cpsc455-cms.git"
+  },
+  "author": "Kenytt Avery",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "better-sqlite3": "^11.5.0",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
