@@ -4,7 +4,7 @@
   "description": "CPSC 455 - Fall 2024",
   "scripts": {
     "start": "nodemon --env-file .env cms.js",
-    "passwords": "./bin/hash.mjs aaa bbb ccc ddd"
+    "passwords": "node --env-file .env ./bin/hash.mjs aaa bbb ccc ddd"
   },
   "repository": {
     "type": "git",
