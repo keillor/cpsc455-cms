@@ -7,17 +7,12 @@ const argon2 = require("argon2")
 const { parse } = require("path")
 
 
-const PORT = 8080
-const DB_FILE = './content.db'
-const DB_SQL = './content.sql'
-const SECRET = 'cpsc455-cms'
-
 const app = express()
 app.use(morgan("dev"))
 app.use(express.static('static'))
 app.use(express.json())
 
-const db = new Database(DB_FILE, {
+const db = new Database(process.env.DB_FILE, {
   verbose: (sql) => console.log(sql.trim().replace(/\s+/g, ' '))
 })
 db.pragma('foreign_keys = ON')
@@ -126,7 +121,7 @@ app.patch('/articles/:article_id', (req, res) => {
   res.json(stmt.get({ article_id }))
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   const stmt = db.prepare(`
     SELECT 1
     FROM sqlite_master
@@ -136,9 +131,9 @@ app.listen(PORT, () => {
   const exists = stmt.get()
 
   if (!exists) {
-    const setup = fs.readFileSync(DB_SQL, { encoding: 'utf-8' })
+    const setup = fs.readFileSync(process.env.DB_SQL, { encoding: 'utf-8' })
     db.exec(setup)
   }
 
-  console.log(`Server running at http://${os.hostname()}:${PORT}/`)
+  console.log(`Server running at http://${os.hostname()}:${process.env.PORT}/`)
 })

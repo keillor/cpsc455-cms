@@ -2,9 +2,8 @@
   "name": "cpsc455-cms",
   "version": "1.0.0",
   "description": "CPSC 455 - Fall 2024",
-  "main": "cms.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon --env-file .env cms.js",
     "passwords": "./bin/hash.mjs aaa bbb ccc ddd"
   },
   "repository": {
