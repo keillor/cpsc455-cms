@@ -18,7 +18,9 @@ const db = new Database(process.env.DB_FILE, {
 db.pragma('foreign_keys = ON')
 
 function checkPassword(password, hash) {
-  return argon2.verify(hash, password)
+  return argon2.verify(hash, password, {
+    secret: Buffer.from(process.env.SECRET)
+  })
 }
 
 function getUserInfo(username) {
