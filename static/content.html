@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Cat News</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
     <script defer src="https://www.unpkg.com/ejs/ejs.min.js"></script>
     <script type="module" src="articles.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Cat News</h1>
-        <p>
-            All the news that's fit to steal from
-            <a href="http://www.catipsum.com/">Cat Ipsum</a>.
-        </p>
+      <h1>Cat News</h1>
+      <p>
+        All the news that's fit to steal from
+        <a href="http://www.catipsum.com/">Cat Ipsum</a>.
+      </p>
     </header>
-    <section id="news">
-    </section>
-    <form action="/authenticate" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" />
-        <label for="username">Password:</label>
-        <input type="text" id="username" name="password" />
-        <input type="submit" value="Submit" />
-    </form>
-</body>
-
+    <section id="news"></section>
+  </body>
 </html>
